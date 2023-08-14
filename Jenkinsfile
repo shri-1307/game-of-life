@@ -1,5 +1,4 @@
-
-peline {
+pipeline {
   agent {label 'java_8'}
   environment {
       BRANCH_NAME= 'master'
@@ -12,7 +11,7 @@ peline {
   stages {
     stage ('vcs') {
 	  steps {
-        git url: 'https://github.com/wakaleo/game-of-life.git'
+        git url: 'https://github.com/shri-1307/game-of-life.git'
         echo "${BRANCH_NAME}"
         echo "${BUILD_NUMBER}"
       }
@@ -33,21 +32,12 @@ peline {
         success {
                  mail subject: 'your project is effective',
                  body: 'your project is effective',
-                 to: 'all@qt.com'
+                 to: 'shree.nakkawar@gmail.com'
         }
             failure {
             mail subject: 'your project is defective',
                  body: 'your project is defective',
-                 to: 'all@qt.com'
+                 to: 'shree.nakkawar91@gmail.com'
         }
-    }
-}pipeline {
-    agent any
-    stages {
-        stage ('vcs') {
-         steps {
-            git url: 'https://github.com/GitPracticeRepo/spring-petclinic.git'
-         }
-         }
     }
 }
