@@ -1,9 +1,5 @@
 pipeline {
   agent {label 'java_8'}
-  environment {
-      BRANCH_NAME= 'master'
-      BUILD_NUMBER= '1'
-  }
   triggers { pollSCM('* * * * *') }
   tools {
         jdk 'java_8'
@@ -16,7 +12,7 @@ pipeline {
     }
 stage ('build'){
 	  steps {
-	    sh 'mvn package'
+	     sh 'mvn package'
 	  }
   }
 
