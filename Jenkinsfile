@@ -1,18 +1,10 @@
 pipeline {
-  agent {label 'java_8'}
-  stages {
-    stage ('vcs') {
-	  steps {
-                 git clone "https://github.com/wakaleo/game-of-life.git"
-	  }
-	}
-  }
-	stage ('build') {
-	  tools {
-        jdk 'JAVA_8'
+    agent any
+    stages {
+        stage ('vcs') {
+         steps {
+            git url: 'https://github.com/GitPracticeRepo/spring-petclinic.git'
+         }
+        }
     }
-	  steps {
-	     mvn package
-	  }
-  }
 }
