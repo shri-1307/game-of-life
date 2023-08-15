@@ -484,7 +484,14 @@
                                 java.util.* -attributes -operations
                                 -enumerations -enumconstants
                             </additionalparam>
-                        </configuration>
+		    </configuration>
+			    <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>a0a52yckgcggf-artifactory-primary-0-releases</name>
+        <url>https://suraj975.jfrog.io/artifactory/libs-release</url>
+    </repository>
+</distributionManagement>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
